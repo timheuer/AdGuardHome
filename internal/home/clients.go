@@ -264,7 +264,7 @@ func (o *clientObject) toPersistent(
 
 	if o.BlockedServices == nil {
 		o.BlockedServices = &filtering.BlockedServices{
-			Schedule: &schedule.Weekly{},
+			Schedule: schedule.EmptyWeekly(),
 		}
 	}
 
