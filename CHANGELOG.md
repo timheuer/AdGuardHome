@@ -27,6 +27,13 @@ See also the [v0.107.52 GitHub milestone][ms-v0.107.52].
 NOTE: Add new changes BELOW THIS COMMENT.
 -->
 
+### Fixed
+
+- Panic caused by missing user-specific blocked services object in configuration
+  file ([#7069]).
+
+[#7069]: https://github.com/AdguardTeam/AdGuardHome/issues/7069
+
 <!--
 NOTE: Add new changes ABOVE THIS COMMENT.
 -->
