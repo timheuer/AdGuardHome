@@ -7,6 +7,10 @@ The format is based on
 and this project adheres to
 [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+<!--
+TODO(a.garipov): Use the common markdown formatting tools.
+-->
+
 
 
 ## [Unreleased]
@@ -14,14 +18,69 @@ and this project adheres to
 <!--
 ## [v0.108.0] - TBA
 
-## [v0.107.49] - 2024-04-24 (APPROX.)
+## [v0.107.52] - 2024-06-29 (APPROX.)
 
-See also the [v0.107.49 GitHub milestone][ms-v0.107.49].
+See also the [v0.107.52 GitHub milestone][ms-v0.107.52].
 
-[ms-v0.107.49]: https://github.com/AdguardTeam/AdGuardHome/milestone/84?closed=1
+[ms-v0.107.52]: https://github.com/AdguardTeam/AdGuardHome/milestone/87?closed=1
 
 NOTE: Add new changes BELOW THIS COMMENT.
 -->
+
+### Changed
+
+- Frontend rewritten in TypeScript.
+
+### Deprecated
+
+- Node 18 support, Node 20 will be required in future releases.
+
+<!--
+NOTE: Add new changes ABOVE THIS COMMENT.
+-->
+
+
+
+## [v0.107.51] - 2024-06-06
+
+See also the [v0.107.51 GitHub milestone][ms-v0.107.51].
+
+### Security
+
+- Go version has been updated to prevent the possibility of exploiting the Go
+  vulnerabilities fixed in [Go 1.22.4][go-1.22.4].
+
+### Changed
+
+- The HTTP server's write timeout has been increased from 1 minute to 5 minutes
+  to match the one used by AdGuard Home's HTTP client to fetch filtering-list
+  data ([#7041]).
+
+[#7041]: https://github.com/AdguardTeam/AdGuardHome/issues/7041
+
+[go-1.22.4]:    https://groups.google.com/g/golang-announce/c/XbxouI9gY7k/
+[ms-v0.107.51]: https://github.com/AdguardTeam/AdGuardHome/milestone/86?closed=1
+
+
+
+## [v0.107.50] - 2024-05-23
+
+See also the [v0.107.50 GitHub milestone][ms-v0.107.50].
+
+### Fixed
+
+- Broken private reverse DNS upstream servers validation causing update failures
+  ([#7013]).
+
+[#7013]: https://github.com/AdguardTeam/AdGuardHome/issues/7013
+
+[ms-v0.107.50]: https://github.com/AdguardTeam/AdGuardHome/milestone/85?closed=1
+
+
+
+## [v0.107.49] - 2024-05-21
+
+See also the [v0.107.49 GitHub milestone][ms-v0.107.49].
 
 ### Security
 
@@ -35,7 +94,7 @@ NOTE: Add new changes BELOW THIS COMMENT.
 ### Changed
 
 - Private rDNS resolution now also affects `SOA` and `NS` requests ([#6882]).
-- Rewrite rules mechanics was changed due to improve resolving in safe search.
+- Rewrite rules mechanics were changed due to improved resolving in safe search.
 
 ### Deprecated
 
@@ -56,11 +115,11 @@ NOTE: Add new changes BELOW THIS COMMENT.
 - YouTube restricted mode is not enforced by HTTPS queries on Firefox.
 - Support for link-local subnets, i.e. `fe80::/16`, in the access settings
   ([#6192]).
-- The ability to apply an invalid configuration for private RDNS, which led to
-  server inoperability.
+- The ability to apply an invalid configuration for private rDNS, which led to
+  server not starting.
 - Ignoring query log for clients with ClientID set ([#5812]).
 - Subdomains of `in-addr.arpa` and `ip6.arpa` containing zero-length prefix
-  incorrectly considered invalid when specified for private RDNS upstream
+  incorrectly considered invalid when specified for private rDNS upstream
   servers ([#6854]).
 - Unspecified IP addresses aren't checked when using "Fastest IP address" mode
   ([#6875]).
@@ -75,11 +134,8 @@ NOTE: Add new changes BELOW THIS COMMENT.
 [#6875]: https://github.com/AdguardTeam/AdGuardHome/issues/6875
 [#6882]: https://github.com/AdguardTeam/AdGuardHome/issues/6882
 
-[go-1.22.3]: https://groups.google.com/g/golang-announce/c/wkkO4P9stm0
-
-<!--
-NOTE: Add new changes ABOVE THIS COMMENT.
--->
+[go-1.22.3]:    https://groups.google.com/g/golang-announce/c/wkkO4P9stm0
+[ms-v0.107.49]: https://github.com/AdguardTeam/AdGuardHome/milestone/84?closed=1
 
 
 
@@ -2964,11 +3020,14 @@ See also the [v0.104.2 GitHub milestone][ms-v0.104.2].
 
 
 <!--
-[Unreleased]: https://github.com/AdguardTeam/AdGuardHome/compare/v0.107.49...HEAD
-[v0.107.49]:  https://github.com/AdguardTeam/AdGuardHome/compare/v0.107.48...v0.107.49
+[Unreleased]: https://github.com/AdguardTeam/AdGuardHome/compare/v0.107.52...HEAD
+[v0.107.52]:  https://github.com/AdguardTeam/AdGuardHome/compare/v0.107.51...v0.107.52
 -->
 
-[Unreleased]: https://github.com/AdguardTeam/AdGuardHome/compare/v0.107.48...HEAD
+[Unreleased]: https://github.com/AdguardTeam/AdGuardHome/compare/v0.107.51...HEAD
+[v0.107.51]:  https://github.com/AdguardTeam/AdGuardHome/compare/v0.107.50...v0.107.51
+[v0.107.50]:  https://github.com/AdguardTeam/AdGuardHome/compare/v0.107.49...v0.107.50
+[v0.107.49]:  https://github.com/AdguardTeam/AdGuardHome/compare/v0.107.48...v0.107.49
 [v0.107.48]:  https://github.com/AdguardTeam/AdGuardHome/compare/v0.107.47...v0.107.48
 [v0.107.47]:  https://github.com/AdguardTeam/AdGuardHome/compare/v0.107.46...v0.107.47
 [v0.107.46]:  https://github.com/AdguardTeam/AdGuardHome/compare/v0.107.45...v0.107.46
